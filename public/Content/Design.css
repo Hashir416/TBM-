@@ -80,10 +80,10 @@
 
 /* Buttons Styling */
 .btn {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     padding: 8px;
     background-color: #00ff15;
-    color: #fff;
+    color: black;
     text-align: center;
     text-decoration:ghostwhite;
     border-radius: 5px;
@@ -96,12 +96,14 @@
 /* Table Styling */
 .table {
     width: 75%;
-    margin: auto;
+    margin: 20px;
     border-collapse: collapse;
     border: 1px solid black;
     font-weight: 700;
     font-family: Arial, Helvetica, sans-serif;
     background-color: whitesmoke;
+    padding: 10px;
+
 }
 .table th, .table td {
     vertical-align: middle;

@@ -11,7 +11,6 @@ let flash = require('connect-flash');
 
 let app = express();
 let indexRouter = require('../routes/index');
-let usersRouter = require('../routes/users');
 let TBMRouter = require('../routes/TBM'); // Updated from WtrackerRouter to TBMRouter
 
 // view engine setup
@@ -47,9 +46,8 @@ app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 // Define routes
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/tournaments', TBMRouter); // Updated route from workouts-list to tournaments
+app.use('/', indexRouter); // Home page
+app.use('/tournaments', TBMRouter); // Tournaments page
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -68,5 +66,6 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
+
 
 
