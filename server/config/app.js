@@ -7,53 +7,49 @@ let session = require('express-session');
 let passport = require('passport');
 let passportlocal = require('passport-local');
 let localtrategy = passportlocal.Strategy;
-let flash = require ('connect-flash');
+let flash = require('connect-flash');
 
 let app = express();
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
-let WtrackerRouter = require('../routes/Wtracker');
+let TBMRouter = require('../routes/TBM'); // Updated from WtrackerRouter to TBMRouter
 
 // view engine setup
-app.set('views', path.join(__dirname, '../views')); // No changes needed here
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
 // MongoDB setup
 const mongoose = require('mongoose');
 let DB = require('./db');
 // Point mongoose to the DB URI
-mongoose.connect(DB.URI, { useNewUrlParser: true, useUnifiedTopology: true }); // Unified and corrected mongoose connection options
+mongoose.connect(DB.URI, { useNewUrlParser: true, useUnifiedTopology: true });
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error'));
 mongoDB.once('open', () => {
   console.log('Connected to MongoDB');
-
-//setting up flash 
-
 });
+
 app.use(session({
   secret: "SomeSecret",
   saveUninitialized: false,
   resave: false
-}))
-//setting up flash and passports
+}));
+// Setting up flash and passport
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../../public'))); // Static files
+app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 // Define routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/workouts-list', WtrackerRouter); // Updated from books-list to workouts-list
+app.use('/tournaments', TBMRouter); // Updated route from workouts-list to tournaments
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -68,8 +64,9 @@ app.use(function (err, req, res, next) {
 
   // Render the error page
   res.status(err.status || 500);
-  res.render('error', { title: 'Error' }); // Updated to ensure consistent title formatting
+  res.render('error', { title: 'Error' });
 });
 
 module.exports = app;
+
 

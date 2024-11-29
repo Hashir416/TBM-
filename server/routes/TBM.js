@@ -1,21 +1,21 @@
 var express = require('express');
 var router = express.Router();
 let mongoose = require('mongoose');
-// telling my router that I have this model
-let Workout = require('../model/Wtracker.js');
-let workoutController = require('../controllers/Wtracker.js');
+// Import the Tournament Bracket Manager model
+let Tournament = require('../model/TBM.js');
+let tournamentController = require('../controllers/TBM.js'); // Updated controller name
 
-/* Get route for the workout tracker - Read Operation */
+/* Get route for the tournament manager - Read Operation */
 router.get('/', async (req, res, next) => {
     try {
-        const WorkoutList = await Workout.find(); 
-        res.render('Workout/list', { 
-            title: 'Workouts', 
-            WorkoutList: WorkoutList 
+        const TournamentList = await Tournament.find(); 
+        res.render('TBM/list', { 
+            title: 'Tournaments', 
+            TournamentList: TournamentList 
         });
     } catch (err) {
         console.error(err);
-        res.render('Workout/list', { 
+        res.render('TBM/list', { 
             error: 'Error on the server'
         });
     }
@@ -24,12 +24,12 @@ router.get('/', async (req, res, next) => {
 /* Create Operation --> Get route for displaying the Add Page */
 router.get('/add', async (req, res, next) => {
     try {
-        res.render('Workout/add', {
-            title: 'Add Workout'
+        res.render('TBM/add', {
+            title: 'Add Tournament'
         });
     } catch (err) {
         console.error(err);
-        res.render('Workout/list', {
+        res.render('TBM/list', {
             error: 'Error on the server'
         });
     }
@@ -38,32 +38,41 @@ router.get('/add', async (req, res, next) => {
 /* Create Operation --> Post route for processing the Add Page */
 router.post('/add', async (req, res, next) => {
     try {
-        let newWorkout = Workout({
-            "date": req.body.date,
-            "exercise": req.body.exercise,
-            "sets": req.body.sets,
-            "reps": req.body.reps,
-            "weight": req.body.weight,
-            "focus": req.body.focus
+        let newTournament = new Tournament({
+            "tournamentName": req.body.tournamentName,
+            "teams": req.body.teams.split(','), // Split team names into an array
+            "numberOfTeams": req.body.numberOfTeams,
+            "startDate": req.body.startDate,
+            "endDate": req.body.endDate,
+            "status": req.body.status
         });
-        await Workout.create(newWorkout);
-        res.redirect('/workouts-list'); // Corrected path
+        await Tournament.create(newTournament);
+
+        // Fetch the updated list of tournaments to render the list page
+        const TournamentList = await Tournament.find();
+        res.render('TBM/list', { 
+            title: 'Tournaments', 
+            TournamentList: TournamentList 
+        });
     } catch (err) {
         console.error(err);
-        res.render('Workout/list', {
+        res.render('TBM/list', {
+            title: 'Tournaments',
             error: 'Error on the server'
         });
     }
 });
 
+
+
 /* Update Operation --> Get route for displaying the Edit Page */
 router.get('/edit/:id', async (req, res, next) => {
     try {
         const id = req.params.id;
-        const workoutToEdit = await Workout.findById(id);
-        res.render('Workout/edit', {
-            title: 'Edit Workout',
-            Workout: workoutToEdit
+        const tournamentToEdit = await Tournament.findById(id);
+        res.render('TBM/edit', {
+            title: 'Edit Tournament',
+            Tournament: tournamentToEdit
         });
     } catch (err) {
         console.error(err);
@@ -75,21 +84,21 @@ router.get('/edit/:id', async (req, res, next) => {
 router.post('/edit/:id', async (req, res, next) => {
     try {
         let id = req.params.id;
-        let updatedWorkout = Workout({
+        let updatedTournament = {
             "_id": id,
-            "date": req.body.date,
-            "exercise": req.body.exercise,
-            "sets": req.body.sets,
-            "reps": req.body.reps,
-            "weight": req.body.weight,
-            "focus": req.body.focus
-        });
-        Workout.findByIdAndUpdate(id, updatedWorkout).then(() => {
-            res.redirect('/workouts-list'); // Corrected path
+            "tournamentName": req.body.tournamentName,
+            "teams": req.body.teams,
+            "numberOfTeams": req.body.numberOfTeams,
+            "startDate": req.body.startDate,
+            "endDate": req.body.endDate,
+            "status": req.body.status
+        };
+        Tournament.findByIdAndUpdate(id, updatedTournament).then(() => {
+            res.redirect('/tournaments'); // path
         });
     } catch (err) {
         console.error(err);
-        res.render('Workout/list', {
+        res.render('TBM/list', {
             error: 'Error on the server'
         });
     }
@@ -99,11 +108,11 @@ router.post('/edit/:id', async (req, res, next) => {
 router.get('/delete/:id', async (req, res, next) => {
     try {
         let id = req.params.id;
-        await Workout.deleteOne({ _id: id });
-        res.redirect('/workouts-list'); // Corrected path
+        await Tournament.deleteOne({ _id: id });
+        res.redirect('/tournaments'); //  path
     } catch (err) {
         console.error(err);
-        res.render('Workout/list', {
+        res.render('TBM/list', {
             error: 'Error on the server'
         });
     }
