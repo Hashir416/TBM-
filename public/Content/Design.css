@@ -1,0 +1,125 @@
+/* Header Section */
+.header-section {
+    background-color: whitesmoke;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px; 
+    padding-top: 10px;
+  }
+  
+  .header-section h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #343a40;
+    margin-top: 20px; 
+    padding-top: 10px;
+  }
+  
+  .navbar-nav {
+    display: flex; /* Arrange links horizontally */
+    justify-content: center; /* Center the links */
+    gap: 15px; /* Add spacing between the links */
+    
+  }
+  
+  .navbar-nav .nav-item {
+    list-style: none; /* Remove bullet points */
+  }
+  
+  .navbar-nav .nav-link {
+    color: #007bff; /* Set a default color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: 600; /* Make the text bold */
+    padding: 5px 10px; /* Add padding for spacing */
+    border-radius: 5px; /* Add slight rounding for hover effects */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    background-color: #f8f9fa; /* Light background on hover */
+    color: #343a40; /* Change text color on hover */
+  }
+  
+  /* Centering Content */
+.d-flex {
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px; 
+    padding-top: 10px;  
+}
+
+/* Form Styling */
+
+.form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px; 
+    padding: 10px;  
+    font-weight: 700;
+}
+
+.form-group
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px; 
+    padding: 5px;  
+    font-weight: 700;
+}
+
+/* Buttons Styling */
+.btn {
+    margin-bottom: 20px;
+    padding: 8px;
+    background-color: #00ff15;
+    color: #fff;
+    text-align: center;
+    text-decoration:ghostwhite;
+    border-radius: 5px;
+    font-weight: bold;
+    border: black;
+    cursor: pointer;
+
+}
+
+/* Table Styling */
+.table {
+    width: 75%;
+    margin: auto;
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+.table th, .table td {
+    vertical-align: middle;
+    border: 1px solid black
+}
+.table-responsive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer
+ {
+    background-color: whitesmoke;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px; 
+    padding-top: 10px;
+  }
