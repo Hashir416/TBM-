@@ -1,20 +1,28 @@
-//const { Collection, default: mongoose } = require("mongoose");
-
 const mongoose = require("mongoose");
 
-let workoutModel = mongoose.Schema(
+let tbManagerSchema = mongoose.Schema(
   {
-    date: String,
-    exercise: String,
-    sets: Number,
-    reps: Number,
-    weight: Number,
-    focus: String,
+    tournamentName: String, // Name of the tournament
+    teams: [
+      {
+        teamName: String, // Name of the team
+        members: [String], // List of team members
+      },
+    ],
+    numberOfTeams: Number, // Total number of teams
+    startDate: Date, // Tournament start date
+    endDate: Date, // Tournament end date
+    status: {
+      type: String,
+      enum: ["Upcoming", "Ongoing", "Completed"], // Status of the tournament
+      default: "Upcoming",
+    },
   },
   {
-    collection: "Workouts", // Name of your MongoDB collection
+    collection: "TBManager", //  MongoDB collection name
   }
 );
 
-module.exports = mongoose.model("Workouts", workoutModel);
+module.exports = mongoose.model("TBManager", tbManagerSchema);
+
 
