@@ -1,13 +1,11 @@
 <!-- Centered Header -->
 <header class="header-section">
-  <h1 class="text-center">Workout Tracker</h1>
+  <h1 class="text-center">Tournament Bracket Manager</h1>
 </header>
 
 <!-- Centered NavBar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
   <div class="container">
-   
-    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
@@ -24,7 +22,7 @@
           <% } else {%>
             <a class="nav-link" href="/aboutus">
           <% } %>
-          <i class="fa-solid fa-circle-info"></i> AboutUs</a>
+          <i class="fa-solid fa-circle-info"></i> About Us</a>
         </li>
         <li class="nav-item">
           <% if(title=="Products") { %>
@@ -43,12 +41,12 @@
           <i class="fa-solid fa-gears"></i> Service</a>
         </li>
         <li class="nav-item">
-          <% if(title=="Workouts") { %>
-            <a class="nav-link active" href="/workouts-list">
+          <% if(title=="Tournaments") { %>
+            <a class="nav-link active" href="/tournaments">
           <% } else {%>
-            <a class="nav-link" href="/workouts-list">
+            <a class="nav-link" href="/tournaments">
           <% } %>
-          <i class="fa-solid fa-dumbbell"></i> Workouts</a>
+          <i class="fa-solid fa-trophy"></i> Tournaments</a>
         </li>
         <li class="nav-item">
           <% if(title=="Contact Us") { %>
@@ -56,7 +54,7 @@
           <% } else {%>
             <a class="nav-link" href="/contactus">
           <% } %>
-          <i class="fa-solid fa-address-card"></i> ContactUs</a>
+          <i class="fa-solid fa-address-card"></i> Contact Us</a>
         </li>
       </ul>
     </div>
