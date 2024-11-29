@@ -1,39 +1,39 @@
-<%- include ../Partials/header.ejs%>
-<%- include ../Partials/main_nav.ejs%>
-<!-- Workout Database -->
+<%- include ../Partials/header.ejs %>
+<%- include ../Partials/main_nav.ejs %>
+<!-- Tournament Database -->
 <div class="d-flex flex-column align-items-center vh-100 justify-content-center">
     <h1 class="text-center mb-4"><%= title %></h1>
-    <a href="/workouts-list/add" class="btn btn-primary mb-3" role="button">
-        <i class="fas fa-plus-circle"></i> Add Workout
+    <a href="/tournaments/add" class="btn btn-primary mb-3" role="button">
+        <i class="fas fa-plus-circle"></i> Add Tournament
     </a>
     <div class="table-responsive w-75">
         <table class="table table-bordered table-striped table-hover text-center">
             <thead class="table-dark">
                 <tr>
-                    <th>Date</th>
-                    <th>Exercise</th>
-                    <th>Sets</th>
-                    <th>Reps</th>
-                    <th>Weight</th>
-                    <th>Focus</th>
+                    <th>Tournament Name</th>
+                    <th>Number of Teams</th>
+                    <th>Teams</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <% for(let count = 0; count < WorkoutList.length; count++) { %>
+                <% for(let count = 0; count < TournamentList.length; count++) { %>
                 <tr>
-                    <td><%= WorkoutList[count].date %></td>
-                    <td><%= WorkoutList[count].exercise %></td>
-                    <td><%= WorkoutList[count].sets %></td>
-                    <td><%= WorkoutList[count].reps %></td>
-                    <td><%= WorkoutList[count].weight %></td>
-                    <td><%= WorkoutList[count].focus %></td>
+                    <td><%= TournamentList[count].tournamentName %></td>
+                    <td><%= TournamentList[count].numberOfTeams %></td>
+                    <td><%= TournamentList[count].teams.join(', ') %></td>
+                    <td><%= TournamentList[count].startDate.toISOString().split('T')[0] %></td>
+                    <td><%= TournamentList[count].endDate.toISOString().split('T')[0] %></td>
+                    <td><%= TournamentList[count].status %></td>
                     <td>
                         <div class="d-flex justify-content-center gap-2">
-                            <a href="/workouts-list/edit/<%= WorkoutList[count]._id %>" class="btn btn-primary btn-sm">
+                            <a href="/tournaments/edit/<%= TournamentList[count]._id %>" class="btn btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i> Edit
                             </a>
-                            <a href="/workouts-list/delete/<%= WorkoutList[count]._id %>" class="btn btn-danger btn-sm">
+                            <a href="/tournaments/delete/<%= TournamentList[count]._id %>" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash-alt"></i> Delete
                             </a>
                         </div>
@@ -44,5 +44,6 @@
         </table>
     </div>
 </div>
-<%- include ../Partials/footer.ejs%>
+<%- include ../Partials/footer.ejs %>
+
 
