@@ -1,133 +1,125 @@
 /* Header Section */
 .header-section {
-    background-color: rgb(200, 73, 73);
-    padding: 20px 0;
-    text-align: center;
-    margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 20px; 
-    padding-top: 10px;
-    border-color: #000101;
-  }
-  
-  .header-section h1 {
-    font-family: fantasy;
-    font-weight: 600;
-    color: #000101;
-    margin-top: 20px; 
-    padding-top: 10px;
-    text-shadow: #52575c;
-    font-size: 60px;
-  }
-  
-  .navbar-nav {
-    display: flex; /* Arrange links horizontally */
-    justify-content: center; /* Center the links */
-    gap: 15px; /* Add spacing between the links */
-    
-  }
-  
-  .navbar-nav .nav-item {
-    list-style: none; /* Remove bullet points */
-  }
-  
-  .navbar-nav .nav-link {
-    color: #007bff; /* Set a default color for links */
-    text-decoration: none; /* Remove underline */
-    font-weight: 600; /* Make the text bold */
-    padding: 5px 10px; /* Add padding for spacing */
-    border-radius: 5px; /* Add slight rounding for hover effects */
-  }
-  
-  .navbar-nav .nav-link:hover {
-    background-color: #f8f9fa; /* Light background on hover */
-    color: #343a40; /* Change text color on hover */
-  }
-  
-  /* Centering Content */
+  background-color: whitesmoke;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 20px; 
+  padding-top: 10px;
+  border-color: #000101;
+}
+
+.header-section h1 {
+  font-family: fantasy;
+  font-weight: 600;
+  color: #000101;
+  margin-top: 20px; 
+  padding-top: 10px;
+  text-shadow: #52575c;
+  font-size: 60px;
+}
+
+/* Navigation Bar Styling */
+.navbar-nav {
+  display: flex; /* Arrange links horizontally */
+  justify-content: center; /* Center the links */
+  gap: 15px; /* Add spacing between the links */
+}
+
+.navbar-nav .nav-item {
+  list-style: none; /* Remove bullet points */
+}
+
+.navbar-nav .nav-link {
+  color: #007bff; /* Set a default color for links */
+  text-decoration: none; /* Remove underline */
+  font-weight: 600; /* Make the text bold */
+  padding: 5px 10px; /* Add padding for spacing */
+  border-radius: 5px; /* Add slight rounding for hover effects */
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #f8f9fa; /* Light background on hover */
+  color: #343a40; /* Change text color on hover */
+}
+
+/* Centering Content */
 .d-flex {
-    
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 20px; 
-    padding-top: 10px;  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px; 
+  padding-top: 10px;  
 }
 
 /* Form Styling */
-
-.form
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 20px; 
-    padding: 10px;  
-    font-weight: 700;
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px; 
+  padding: 10px;  
+  font-weight: 700;
 }
 
-.form-group
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 10px; 
-    padding: 5px;  
-    font-weight: 700;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px; 
+  padding: 5px;  
+  font-weight: 700;
 }
 
 /* Buttons Styling */
 .btn {
-    margin-bottom: 5px;
-    padding: 8px;
-    background-color: #00ff15;
-    color: black;
-    text-align: center;
-    text-decoration:ghostwhite;
-    border-radius: 5px;
-    font-weight: bold;
-    border: black;
-    cursor: pointer;
-
+  margin-bottom: 5px;
+  padding: 8px;
+  background-color: #00ff15;
+  color: black;
+  text-align: center;
+  text-decoration: ghostwhite;
+  border-radius: 5px;
+  font-weight: bold;
+  border: black;
+  cursor: pointer;
 }
 
 /* Table Styling */
 .table {
-    width: 75%;
-    margin: 20px;
-    border-collapse: collapse;
-    border: 5px solid black;
-    font-weight: 700;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: whitesmoke;
-    padding: 15px;
-    
-
+  width: 75%;
+  margin: 20px;
+  border-collapse: collapse;
+  border: 5px solid black;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: whitesmoke;
+  padding: 15px;
 }
+
 .table th, .table td {
-    vertical-align: middle;
-    border: 5px solid black
+  vertical-align: middle;
+  border: 5px solid black;
 }
+
 .table-responsive {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-footer
- {
-    background-color: rgb(200, 73, 73);
-    padding: 20px 0;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 20px; 
-    padding-top: 10px;
-    font-size: medium;
-    border-color: #000101;
-  }
+footer {
+  background-color: rgb(200, 73, 73);
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px; 
+  padding-top: 10px;
+}
+
