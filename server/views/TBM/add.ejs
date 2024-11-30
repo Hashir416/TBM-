@@ -1,0 +1,47 @@
+<%- include ../Partials/header.ejs %>
+<%- include ../Partials/main_nav.ejs %>
+<!-- Content for Add Tournament Page -->
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="col-md-6">
+        <h1 class="text-center"><%= title %></h1>
+        <form class="form" method="POST" action="/tournaments/add">
+            <div class="form-group mb-3">
+                <label for="tournamentNameTextField">Tournament Name</label>
+                <input type="text" class="form-control" id="tournamentNameTextField" placeholder="Enter the Tournament Name" name="tournamentName" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="numberOfTeamsTextField">Number of Teams</label>
+                <input type="number" class="form-control" id="numberOfTeamsTextField" placeholder="Enter the Number of Teams" name="numberOfTeams" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="teamsTextField">Team Names (Comma Separated)</label>
+                <input type="text" class="form-control" id="teamsTextField" placeholder="Enter Team Names (e.g., Team A, Team B)" name="teams" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="startDateTextField">Start Date</label>
+                <input type="date" class="form-control" id="startDateTextField" placeholder="Enter the Start Date" name="startDate" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="endDateTextField">End Date</label>
+                <input type="date" class="form-control" id="endDateTextField" placeholder="Enter the End Date" name="endDate" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="statusDropdown">Tournament Status</label>
+                <select class="form-control" id="statusDropdown" name="status" required>
+                    <option value="Upcoming">Upcoming</option>
+                    <option value="Ongoing">Ongoing</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-primary" type="submit">
+                    Submit <i class="fas fa-check"></i>
+                </button>
+                <button class="btn btn-warning" type="reset">
+                    Erase <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include ../Partials/footer.ejs %>

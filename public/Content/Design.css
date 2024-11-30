@@ -1,0 +1,177 @@
+/* Header Section */
+.header-section {
+  background-color: whitesmoke;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 20px;
+}
+
+.header-section h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #343a40;
+}
+
+/* Navigation Bar Styling */
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.navbar-nav .nav-item {
+  list-style: none;
+}
+
+.navbar-nav .nav-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+/* Centering Content */
+.d-flex {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Form Styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  padding: 5px;
+  font-weight: 700;
+}
+
+/* Buttons Styling */
+.btn {
+  margin: 0;
+  padding: 8px 15px;
+  background-color: #00ff15;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #008c00;
+  color: white;
+}
+
+/* Specific Buttons */
+.btn-sm {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.btn-primary {
+  background-color: #00ff15;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #008c00;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #ff5733;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-danger:hover {
+  background-color: #c70000;
+  color: white;
+}
+
+/* Add Tournament Button */
+.btn-success {
+  background-color: #00ff15;
+  color: black;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn-success:hover {
+  background-color: #008c00;
+  color: white;
+}
+
+/* Table Styling */
+.table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 1px solid black;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: whitesmoke;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+}
+
+.table td.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  padding: 8px; /* Add slight padding for uniformity */
+  background-color: transparent;
+}
+
+.table-responsive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer Styling */
+footer {
+  background-color: whitesmoke;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 20px;
+}

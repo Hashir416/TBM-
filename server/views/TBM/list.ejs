@@ -1,0 +1,45 @@
+<%- include('../Partials/header.ejs') %>
+<%- include('../Partials/main_nav.ejs') %>
+
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Tournaments</h1>
+    <a href="/tournaments/add" class="btn btn-success">
+      Add Tournament <i class="fa-solid fa-plus"></i>
+    </a>
+  </div>
+
+  <% if (TournamentList && TournamentList.length > 0) { %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Teams</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% TournamentList.forEach(tournament => { %>
+          <tr>
+            <td><%= tournament.tournamentName %></td>
+            <td><%= tournament.teams.join(', ') %></td>
+            <td><%= tournament.startDate %></td>
+            <td><%= tournament.endDate %></td>
+            <td><%= tournament.status %></td>
+            <td class="actions">
+              <a href="/tournaments/edit/<%= tournament._id %>" class="btn btn-primary btn-sm">Edit</a>
+              <a href="/tournaments/delete/<%= tournament._id %>" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <p>No tournaments found.</p>
+  <% } %>
+</div>
+
+<%- include('../Partials/footer.ejs') %>
