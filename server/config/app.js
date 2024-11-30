@@ -6,7 +6,7 @@ let logger = require('morgan');
 let session = require('express-session');
 let passport = require('passport');
 let passportlocal = require('passport-local');
-let localtrategy = passportlocal.Strategy;
+let localStrategy = passportlocal.Strategy; 
 let flash = require('connect-flash');
 
 let app = express();
@@ -28,6 +28,7 @@ mongoDB.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
+// Middleware setup
 app.use(session({
   secret: "SomeSecret",
   saveUninitialized: false,
@@ -66,4 +67,3 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
-

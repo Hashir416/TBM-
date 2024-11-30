@@ -80,21 +80,68 @@
 /* Buttons Styling */
 .btn {
   margin-bottom: 5px;
-  padding: 8px;
+  padding: 8px 15px;
   background-color: #00ff15;
   color: black;
   text-align: center;
-  text-decoration: ghostwhite;
+  text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  border: black;
+  border: 1px solid black;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #008c00;
+  color: white;
+}
+
+/* Specific Buttons */
+.btn-sm {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.btn-primary {
+  background-color: #00ff15;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #008c00;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #ff5733;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-danger:hover {
+  background-color: #c70000;
+  color: white;
+}
+
+/* Add Tournament Button */
+.btn-success {
+  background-color: #00ff15;
+  color: black;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn-success:hover {
+  background-color: #008c00;
+  color: white;
 }
 
 /* Table Styling */
 .table {
-  width: 75%;
-  margin: 20px;
+  width: 80%;
+  margin: 20px auto;
   border-collapse: collapse;
   border: 5px solid black;
   font-weight: 700;
@@ -118,7 +165,6 @@ footer {
   background-color: rgb(200, 73, 73);
   padding: 20px 0;
   text-align: center;
-  margin-bottom: 10px;
   margin-top: 20px; 
   padding-top: 10px;
 }

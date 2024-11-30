@@ -1,7 +1,7 @@
-// immediately invoked function expression
-(function(){
-    function start(){
-        console.log("app started")
+// Immediately Invoked Function Expression (IIFE) for safe code execution
+(function() {
+    function start() {
+        console.log("App started successfully");
     }
     window.addEventListener("load", start);
 })();
