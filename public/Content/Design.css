@@ -1,20 +1,23 @@
 /* Header Section */
 .header-section {
-    background-color: whitesmoke;
+    background-color: rgb(200, 73, 73);
     padding: 20px 0;
     text-align: center;
     margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif;
     margin-top: 20px; 
     padding-top: 10px;
+    border-color: #000101;
   }
   
   .header-section h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: fantasy;
     font-weight: 600;
-    color: #343a40;
+    color: #000101;
     margin-top: 20px; 
     padding-top: 10px;
+    text-shadow: #52575c;
+    font-size: 60px;
   }
   
   .navbar-nav {
@@ -98,16 +101,17 @@
     width: 75%;
     margin: 20px;
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 5px solid black;
     font-weight: 700;
     font-family: Arial, Helvetica, sans-serif;
     background-color: whitesmoke;
-    padding: 10px;
+    padding: 15px;
+    
 
 }
 .table th, .table td {
     vertical-align: middle;
-    border: 1px solid black
+    border: 5px solid black
 }
 .table-responsive {
     display: flex;
@@ -118,10 +122,12 @@
 
 footer
  {
-    background-color: whitesmoke;
+    background-color: rgb(200, 73, 73);
     padding: 20px 0;
     text-align: center;
     margin-bottom: 10px;
     margin-top: 20px; 
     padding-top: 10px;
+    font-size: medium;
+    border-color: #000101;
   }
